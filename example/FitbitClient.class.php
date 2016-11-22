@@ -114,9 +114,9 @@ class FitbitClient {
 		       CURLOPT_HTTPHEADER => array('Authorization: Bearer '.$this->accessToken));
               curl_setopt_array($ch, $options);
 	      if ($method == 'POST')
-	      	 curl_setopt($ch, 'CURLOPT_POST', true);
+	      	 curl_setopt($ch, CURLOPT_POST, true);
 	      if ($data != null)
-	      	 curl_setopt($ch, 'CURLOPT_POSTFIELDS', http_build_query($data));
+	      	 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 		 
 	      return json_decode(curl_exec($ch), true);
       }
