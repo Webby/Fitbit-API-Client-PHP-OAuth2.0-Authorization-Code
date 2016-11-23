@@ -115,7 +115,7 @@ class FitbitClient {
               curl_setopt_array($ch, $options);
 	      if ($method == 'POST')
 	      	 curl_setopt($ch, CURLOPT_POST, true);
-	      if ($data != null)
+	      if ($data != null && $method == 'POST')
 	      	 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 		 
 	      return json_decode(curl_exec($ch), true);
